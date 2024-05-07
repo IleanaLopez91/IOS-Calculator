@@ -39,7 +39,7 @@ export const useCalculator = () => {
     setNumber('0');
     setPrevNumber('0');
     lastOperator.current = undefined;
-    setFormula('');
+    setFormula('0');
   };
 
   const deleteOparation = () => {
@@ -57,10 +57,15 @@ export const useCalculator = () => {
   };
 
   const toggleSing = () => {
-    if (number.includes('-')) {
+    /* if (number.includes('-')) {
       return setNumber(number.replace('-', ''));
     }
     setNumber('-' + number);
+    */
+    if (formula.includes('-')) {
+      return setNumber(formula.replace('-', ''));
+    }
+    setNumber('-' + formula);
   };
 
   const buildNumber = (numberString: string) => {
